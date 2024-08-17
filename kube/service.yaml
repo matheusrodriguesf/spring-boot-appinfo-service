@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-info-service
+  labels:
+    app: app-info-service
+spec:
+  ports:
+  - port: 8080
+    targetPort: 8080
+  selector:
+    app: app-info-service
+  type: LoadBalancer

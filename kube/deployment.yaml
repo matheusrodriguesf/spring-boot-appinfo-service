@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-info-service
+  labels:
+    app: app-info-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-info-service
+  template:
+    metadata:
+      labels:
+        app: app-info-service
+    spec:
+      containers:
+      - name: app-info-service
+        image: matheusrfa/springboot-appinfo-microservice:latest
+        ports:
+        - containerPort: 8080
